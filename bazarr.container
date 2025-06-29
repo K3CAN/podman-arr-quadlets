@@ -9,9 +9,8 @@ WorkingDirectory=/usr/local/podman/configs/bazarr
 Pod=arr-stack.pod
 ContainerName=bazarr
 User=992
-Group=1002
+Group=992
 Environment=TZ=America/New_York
-# Environment=PUID=992 PGID=1002
 Image=lscr.io/linuxserver/bazarr:latest
 Volume=/usr/local/podman/configs/bazarr:/config:Z
 AutoUpdate=registry

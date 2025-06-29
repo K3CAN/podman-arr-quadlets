@@ -9,7 +9,7 @@ WorkingDirectory=/usr/local/podman/configs/lidarr
 Pod=arr-stack.pod
 ContainerName=lidarr
 User=992
-Group=1002
+Group=992
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/lidarr:latest
 Volume=/usr/local/podman/configs/lidarr:/config

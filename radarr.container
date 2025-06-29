@@ -9,7 +9,7 @@ WorkingDirectory=/usr/local/podman/configs/radarr
 Pod=arr-stack.pod
 ContainerName=radarr
 User=992
-Group=1002
+Group=992
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/radarr:latest
 Volume=/usr/local/podman/configs/radarr:/config

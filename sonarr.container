@@ -9,7 +9,7 @@ WorkingDirectory=/usr/local/podman/configs/sonarr
 Pod=arr-stack.pod
 ContainerName=sonarr
 User=992
-Group=1002
+Group=992
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/sonarr:latest
 Volume=/usr/local/podman/configs/sonarr:/config
