@@ -1,0 +1,22 @@
+[Unit]
+Description="Jellyfin Media Server"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/jellyfin
+
+[Container]
+ContainerName=jellyfin
+User=992
+Group=1002
+GroupAdd=105
+Image=docker.io/jellyfin/jellyfin:latest
+PublishPort=8096:8096/tcp
+Tmpfs=/cache
+Volume=/usr/local/podman/configs/jellyfin:/config:Z
+Volume=/naspool/media/:/media:z
+AutoUpdate=registry
+AddDevice=/dev/dri:/dev/dri:rw
+
+[Install]
+WantedBy=multi-user.target

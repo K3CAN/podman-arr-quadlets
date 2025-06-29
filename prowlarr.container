@@ -1,0 +1,17 @@
+[Unit]
+Description="prowlarr Quadlet for my arr suite"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/prowlarr
+
+[Container]
+Pod=arr-stack.pod
+ContainerName=prowlarr
+User=992
+Group=1002
+Environment=TZ=America/New_York
+Image=lscr.io/linuxserver/prowlarr:latest
+Volume=/usr/local/podman/configs/prowlarr:/config
+AutoUpdate=registry
+

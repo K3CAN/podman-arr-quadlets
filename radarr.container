@@ -1,0 +1,17 @@
+[Unit]
+Description="radarr Quadlet for my arr suite"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/radarr
+
+[Container]
+Pod=arr-stack.pod
+ContainerName=radarr
+User=992
+Group=1002
+Environment=TZ=America/New_York
+Image=lscr.io/linuxserver/radarr:latest
+Volume=/usr/local/podman/configs/radarr:/config
+AutoUpdate=registry
+

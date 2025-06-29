@@ -1,0 +1,21 @@
+[Unit]
+Description="Quadlet Pod for my arr suite"
+
+[Service]
+WorkingDirectory=/usr/local/podman
+
+[Pod]
+PodName=arr-stack
+PodmanArgs=--cpus 2 --hostname arr-stack
+PublishPort=9690:5800
+PublishPort=9691:9091
+PublishPort=9692:6767
+PublishPort=9695:5055
+PublishPort=9696:9696
+PublishPort=9697:7878
+PublishPort=9698:8989
+PublishPort=9699:8686
+Volume=/naspool/media/:/data/:z,shared
+
+[Install]
+WantedBy=multi-user.target

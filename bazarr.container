@@ -1,0 +1,18 @@
+[Unit]
+Description="Bazarr Quadlet for my arr suite"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/bazarr
+
+[Container]
+Pod=arr-stack.pod
+ContainerName=bazarr
+User=992
+Group=1002
+Environment=TZ=America/New_York
+# Environment=PUID=992 PGID=1002
+Image=lscr.io/linuxserver/bazarr:latest
+Volume=/usr/local/podman/configs/bazarr:/config:Z
+AutoUpdate=registry
+

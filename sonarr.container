@@ -1,0 +1,17 @@
+[Unit]
+Description="sonarr Quadlet for my arr suite"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/sonarr
+
+[Container]
+Pod=arr-stack.pod
+ContainerName=sonarr
+User=992
+Group=1002
+Environment=TZ=America/New_York
+Image=lscr.io/linuxserver/sonarr:latest
+Volume=/usr/local/podman/configs/sonarr:/config
+AutoUpdate=registry
+

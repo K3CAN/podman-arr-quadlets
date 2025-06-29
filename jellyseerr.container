@@ -1,0 +1,17 @@
+[Unit]
+Description="jellyseerr Quadlet for my arr suite"
+
+[Service]
+Restart=always
+WorkingDirectory=/usr/local/podman/configs/jellyseerr
+
+[Container]
+Pod=arr-stack.pod
+ContainerName=jellyseerr
+User=992
+Group=1002
+Environment=TZ=America/New_York
+Image=ghcr.io/fallenbagel/jellyseerr:latest
+Volume=/usr/local/podman/configs/jellyseerr:/app/config
+AutoUpdate=registry
+
