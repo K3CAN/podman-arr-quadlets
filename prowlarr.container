@@ -9,9 +9,13 @@ WorkingDirectory=/usr/local/podman/configs/prowlarr
 Pod=arr-stack.pod
 ContainerName=prowlarr
 User=992
-Group=992
+Group=1002
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/prowlarr:latest
 Volume=/usr/local/podman/configs/prowlarr:/config
 AutoUpdate=registry
-
+HealthCmd=curl --fail http://localhost:9696/ping
+HealthInterval=60s
+HealthTimeout=5s
+HealthStartPeriod=60s
+HealthOnFailure=kill

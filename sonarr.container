@@ -9,9 +9,13 @@ WorkingDirectory=/usr/local/podman/configs/sonarr
 Pod=arr-stack.pod
 ContainerName=sonarr
 User=992
-Group=992
+Group=1002
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/sonarr:latest
 Volume=/usr/local/podman/configs/sonarr:/config
 AutoUpdate=registry
-
+HealthCmd=curl --fail http://localhost:8989/ping
+HealthInterval=60s
+HealthTimeout=5s
+HealthStartPeriod=60s
+HealthOnFailure=kill

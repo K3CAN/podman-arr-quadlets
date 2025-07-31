@@ -9,9 +9,13 @@ WorkingDirectory=/usr/local/podman/configs/radarr
 Pod=arr-stack.pod
 ContainerName=radarr
 User=992
-Group=992
+Group=1002
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/radarr:latest
 Volume=/usr/local/podman/configs/radarr:/config
 AutoUpdate=registry
-
+HealthCmd=curl --fail http://localhost:7878/ping
+HealthInterval=60s
+HealthTimeout=5s
+HealthStartPeriod=60s
+HealthOnFailure=kill

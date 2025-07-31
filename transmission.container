@@ -9,7 +9,7 @@ WorkingDirectory=/usr/local/podman/configs/transmission/
 ContainerName=transmission
 Pod=arr-stack.pod
 Environment=OPENVPN_PROVIDER=PIA OPENVPN_CONFIG=ca_montreal OPENVPN_OPTS=--mute-replay-warnings
-Environment=PUID=992 PGID=992  
+Environment=PUID=992 PGID=1002  
 Environment=TRANSMISSION_DOWNLOAD_DIR=/data/temp 
 Environment=LOCAL_NETWORK=10.0.0.0/16
 Environment=TZ=America/New_York
@@ -19,4 +19,3 @@ Secret=pia_username,type=env,target=OPENVPN_USERNAME
 Secret=pia_password,type=env,target=OPENVPN_PASSWORD
 Volume=/usr/local/podman/configs/transmission/:/config
 AutoUpdate=registry
-

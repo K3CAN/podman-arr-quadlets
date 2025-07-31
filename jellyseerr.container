@@ -9,7 +9,7 @@ WorkingDirectory=/usr/local/podman/configs/jellyseerr
 Pod=arr-stack.pod
 ContainerName=jellyseerr
 User=992
-Group=992
+Group=1002
 Environment=TZ=America/New_York
 Image=ghcr.io/fallenbagel/jellyseerr:latest
 Volume=/usr/local/podman/configs/jellyseerr:/app/config

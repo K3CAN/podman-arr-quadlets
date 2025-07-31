@@ -9,9 +9,13 @@ WorkingDirectory=/usr/local/podman/configs/bazarr
 Pod=arr-stack.pod
 ContainerName=bazarr
 User=992
-Group=992
+Group=1002
 Environment=TZ=America/New_York
 Image=lscr.io/linuxserver/bazarr:latest
 Volume=/usr/local/podman/configs/bazarr:/config:Z
 AutoUpdate=registry
-
+HealthCmd=curl --fail http://localhost:6767/api/system/ping
+HealthInterval=60s
+HealthTimeout=5s
+HealthStartPeriod=60s
+HealthOnFailure=kill
